@@ -1,6 +1,6 @@
 # MANCO-Gen1
 
-Build personal de firmware para lightgun, basado en el port de OpenFIRE para ESP32, corriendo sobre ESP32-S3 (MANCO Gen1).
+Build de firmware para lightgun, basado en el port de OpenFIRE para ESP32, corriendo sobre ESP32-S3 (MANCO Gen1).
 
 ## Créditos
 
