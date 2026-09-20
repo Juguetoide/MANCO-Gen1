@@ -27,6 +27,11 @@ Cambios respecto al original:
 
 * Los accesorios inalámbricos (pedal por ESP-NOW) siguen funcionando aunque la lightgun esté conectada por cable USB a la PC — el firmware original apaga el radio wireless por completo al detectar el cable, esto lo mantiene activo en paralelo solo para accesorios.
 * Fix del bug de auto-recoil por hold en ESP32-S3: la lectura del estado del solenoide vía `digitalRead()` sobre un pin configurado como `OUTPUT` no es confiable en esta arquitectura (a diferencia de RP2040, donde sí lo es). Se agregó una variable de estado dedicada (`solenoidEngaged`) y un método `SolenoidWrite()` para reemplazar esas lecturas directas del pin.
+* Soporte de Wii Nunchuk (vía I2C) como mando: alimenta el analog stick y los botones A/C (Z y C del Nunchuk), en reemplazo de la lectura ADC directa de pines sin potenciómetro, que generaba un drift fantasma en el stick cuando no había Nunchuk conectado.
+
+### Modificación de hardware
+
+* Switch físico soldado al pin BOOT (GPIO0), accesible desde fuera de la carcasa: mantenerlo presionado al conectar el USB entra a modo de actualización (bootloader) sin necesidad de abrir la MANCO.
 
 ## Autor de este fork
 
